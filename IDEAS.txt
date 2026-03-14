@@ -1,0 +1,15 @@
+----- PADDLE -----
+[ ] Make paddle change speed if hit with some booster or bomb, quicker or slower for x a mount of time.
+
+
+----- BRICKS -----
+[ ] Bricks have different hardness (levels, some need more hits to be destroyed) and texture to show it.
+
+----- BOOSTER FOR BALL -----
+[ ] Maybe ball can have a x3 in a randomizer
+
+---- LEVEL -----
+[ ]
+
+DOUBTS
+1. Should I let ball move with the paddle at the start?
