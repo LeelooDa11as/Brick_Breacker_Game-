@@ -1,4 +1,7 @@
 #include <iostream>
+#include <SFML/Window.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Graphics.hpp>
 
 class	Ball {
 	private:
@@ -9,10 +12,11 @@ class	Ball {
 		float	_dir_vect[2] = {1, 0};
 
 		/* design of the object */
-		const float	_radius = 10;
+		const float		_radius = 10;
+		sf::CircleShape	_ball_sprite;
 
 	public:
-		Ball(const float &speed, const float &pos_x, const float pos_y);
+		Ball(sf::CircleShape ball_sprite, const float &speed);
 		~Ball(void);
 
 		float	getPosX(void) const;

@@ -1,6 +1,6 @@
 #include <Ball.hpp>
 
-Ball::Ball(const float &speed, const float &pos_x, const float pos_y) : _speed(speed), _pos_x(pos_x), _pos_y(pos_y) {
+Ball::Ball(sf::CircleShape ball_sprite, const float &speed) : _ball_sprite(ball_sprite), _speed(speed) {
 	std::cout << "Ball class constructor has been called" << std::endl;
     return;
 }
