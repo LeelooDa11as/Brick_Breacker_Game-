@@ -30,10 +30,10 @@ Ball*	Game::createBall(const float radius, float pos_x, float pos_y, const int s
 	ballSprite.setFillColor(sf::Color::Yellow);
 
 	pos_x = _width/2 + pos_x;
-	pos_y = _height*0.9f - pos_y;
-	std::cout << pos_x << pos_y << std::endl; // delete later
+	pos_y = _height*0.9 - pos_y;
+	std::cout << "Pos y es: " << pos_y << std::endl; // delete later
 	ballSprite.setOrigin({radius, radius});
-	ballSprite.setPosition({100, 100});
+	ballSprite.setPosition({pos_x, pos_y});
 	ball = new Ball(ballSprite, speed);
 	return ball;
 }

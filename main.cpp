@@ -2,8 +2,8 @@
 
 
 int main() {
-    int height = 1000;
-    int width = 600;
+    unsigned int height = 800;
+    unsigned int width = 600;
 
     Screen brickBreaker(height, width);
     brickBreaker.runGame();
