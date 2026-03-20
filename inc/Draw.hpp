@@ -5,8 +5,10 @@
 
 class Draw
 {
+	private:
+	sf::RenderWindow& _window;
 	public:
-	Draw(void);
+	Draw(sf::RenderWindow& window);
 	~Draw(void);
 
 	void	drawBackground(const float &height, const float &width);

@@ -1,6 +1,5 @@
 #include "Ball.hpp"
 #include "Brick.hpp"
-#include "Draw.hpp"
 #include "Level.hpp"
 #include "Paddle.hpp"
 

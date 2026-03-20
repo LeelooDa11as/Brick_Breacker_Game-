@@ -1,6 +1,6 @@
 #include "../inc/Draw.hpp"
 
-Draw::Draw(void) {
+Draw::Draw(sf::RenderWindow& window) : _window(window) {
 	return;
 }
 
