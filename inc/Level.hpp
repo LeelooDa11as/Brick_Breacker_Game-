@@ -5,10 +5,10 @@
 
 class	Level {
 	private:
-		int								_lvl;
+		//int								_lvl;
 		std::vector<std::vector<int>>	_brick_map;
 		/* protecting just in case */
-		int _max_lvl = 3;
+		//int _max_lvl = 3;
 
 		void	print_map() const;
 

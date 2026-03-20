@@ -1,10 +1,7 @@
 #include "../inc/Screen.hpp"
 
 Screen::Screen(const unsigned int height, const unsigned int width) : height(static_cast<float>(height)), width(static_cast<float>(width)){
-    sf::RenderWindow window(sf::VideoMode({height, width}), "Brick Breaker");
-    window.setFramerateLimit(60);
-    draw = new Draw(&window);
-    game = new Game(lvl);
+    game = new Game(lvl, width, height);
     return;
 }
 
@@ -14,6 +11,8 @@ Screen::~Screen() {
 };
 
 void    Screen::runGame(void) {
+    sf::RenderWindow window(sf::VideoMode({static_cast<unsigned int>(width), static_cast<unsigned int>(height)}), "Brick Breaker");
+    window.setFramerateLimit(60);
 
     while (window.isOpen()) {
         while (const std::optional event = window.pollEvent()) {
@@ -21,6 +20,9 @@ void    Screen::runGame(void) {
                 window.close();
             }
         }
+        window.clear();
+        window.draw(game->getBallSprite());
+        window.display();
         //if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)) {
         //    playerSprite.move({-5.f, 0.f});
         //}

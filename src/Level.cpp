@@ -1,9 +1,9 @@
 #include "../inc/Level.hpp"
 
 Level::Level(const int lvl) {
-	if (lvl > this->_max_lvl) {
-		throw (std::runtime_error("Level exceeds maximum allowed value"));
-	}
+	//if (lvl > this->_max_lvl) {
+	//	throw (std::runtime_error("Level exceeds maximum allowed value"));
+	//}
 	std::cout << "Level class constructor called" << std::endl;
 	loadMap(lvl);	
 	return;
@@ -33,14 +33,14 @@ void	Level::loadMap(const int lvl) {
 			break;
 		case 3: filename = "../maps/Level_3.txt";
 			break;
-		default:
-			throw std::runtime_error("Unknown level requested");
+		//default:
+		//	throw std::runtime_error("Unknown level requested");
 	}
 
 	std::ifstream	file(filename);
-	if (!file.is_open()) {
-		throw std::runtime_error("File System Error: Could not open the file");
-	}
+	//if (!file.is_open()) {
+	//	throw std::runtime_error("File System Error: Could not open the file");
+	//}
 	std::string	line;
 	_brick_map.clear();
 

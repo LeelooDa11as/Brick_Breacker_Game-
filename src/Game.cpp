@@ -1,6 +1,6 @@
 #include "../inc/Game.hpp"
 
-Game::Game(const int lvl, const int width, const int height) : _width(width), _height(height) {
+Game::Game(const int lvl, const unsigned int width, const unsigned int height) : _width(width), _height(height) {
 	level = new Level(lvl);
 	paddle = createPaddle(100, 20,  0, 0, 45);
 	ball = createBall(10,  0, 0, 45);	
@@ -31,8 +31,13 @@ Ball*	Game::createBall(const float radius, float pos_x, float pos_y, const int s
 
 	pos_x = _width/2 + pos_x;
 	pos_y = _height*0.9f - pos_y;
+	std::cout << pos_x << pos_y << std::endl; // delete later
 	ballSprite.setOrigin({radius, radius});
-	ballSprite.setPosition({pos_x, pos_y});
+	ballSprite.setPosition({100, 100});
 	ball = new Ball(ballSprite, speed);
 	return ball;
+}
+
+sf::CircleShape Game::getBallSprite(void) {
+	return (this->ball->getBallSprite());
 }

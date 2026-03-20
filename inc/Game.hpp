@@ -19,8 +19,10 @@ class Game
 	int		_height;
 
 	public:
-	Game(const int lvl, const int width, const int height);
+	Game(const int lvl, const unsigned int width, const unsigned int height);
 	~Game(void);
 	Paddle*	createPaddle(const float paddle_width, const float paddle_height, float pos_x, float pos_y, const int speed);
 	Ball*	createBall(const float radius, float pos_x, float pos_y, const int speed);
+
+	sf::CircleShape getBallSprite(void);
 };

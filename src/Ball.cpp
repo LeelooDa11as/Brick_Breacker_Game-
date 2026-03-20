@@ -10,3 +10,7 @@ Ball::~Ball() {
     std::cout << "Ball class destructor has been called" << std::endl;
     return;
 }
+
+sf::CircleShape	Ball::getBallSprite(void) {
+    return (this->_ball_sprite);
+}

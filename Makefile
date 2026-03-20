@@ -1,5 +1,5 @@
 NAME = brickBreacker
-SRC = main.cpp src/Ball.cpp src/Game.cpp src/Paddle.cpp src/Screen.cpp
+SRC = main.cpp src/Ball.cpp src/Game.cpp src/Paddle.cpp src/Screen.cpp src/Level.cpp
 F_OBJ = obj/
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))
