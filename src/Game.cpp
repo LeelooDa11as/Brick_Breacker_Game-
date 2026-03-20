@@ -3,9 +3,7 @@
 Game::Game(const int lvl, const int width, const int height) : _width(width), _height(height) {
 	level = new Level(lvl);
 	paddle = createPaddle(100, 20,  0, 0, 45);
-	ball = createBall(100, 20,  0, 0, 45);
-	new Ball(40.f, 300.f, 60.f, spriteBall);
-	
+	ball = createBall(10,  0, 0, 45);	
 	return;
 }
 
@@ -16,7 +14,7 @@ Game::~Game(void) {
 	return;
 }
 
-&Paddle Game::createPaddle(const float paddle_width, const float paddle_height, float pos_x, float pos_y, const int speed){
+Paddle* Game::createPaddle(const float paddle_width, const float paddle_height, float pos_x, float pos_y, const int speed){
 	sf::RectangleShape paddleSprite(sf::Vector2f({paddle_width, paddle_height}));
     paddleSprite.setFillColor(sf::Color::Green);
 
@@ -27,14 +25,14 @@ Game::~Game(void) {
 	return paddle;
 }
 
-&Ball	Game::createBall(const float radius, float pos_x, float pos_y, const int speed) {
+Ball*	Game::createBall(const float radius, float pos_x, float pos_y, const int speed) {
 	sf::CircleShape	ballSprite(radius);
 	ballSprite.setFillColor(sf::Color::Yellow);
 
 	pos_x = _width/2 + pos_x;
 	pos_y = _height*0.9f - pos_y;
 	ballSprite.setOrigin({radius, radius});
-	ballSpite.setPosition({pos_x, pos_y});
-	ball = new Ball();
+	ballSprite.setPosition({pos_x, pos_y});
+	ball = new Ball(ballSprite, speed);
 	return ball;
 }

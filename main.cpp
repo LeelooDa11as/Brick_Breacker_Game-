@@ -6,7 +6,7 @@ int main() {
     int width = 600;
 
     Screen brickBreaker(height, width);
-    brickBreacker.runGame();
+    brickBreaker.runGame();
     
     return (0);
-}
+} 

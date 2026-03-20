@@ -16,14 +16,8 @@ class Screen
 	float	width;
 
 	public:
-	Screen(const int height, const int width);
+	Screen(const unsigned int height, const unsigned  int width);
 	~Screen(void);
 
 	void	runGame(void);
-	void	drawBall();
-	void	drawPaddle();
-	void	drawLevel();
-	void	drawAll();
-
-
 };
