@@ -1,6 +1,6 @@
 #include "../inc/Paddle.hpp"
 
-Paddle::Paddle(const float &pos_x, const float &pos_y, const float &speed) : _pos_x(pos_x), _pos_y(pos_y), _speed(speed) {
+Paddle::Paddle(sf::RectangleShape paddle_sprite, const float &speed) : _paddle_sprite(paddle_sprite), _speed(speed) {
 	std::cout << "Paddle class constructor has been called" << std::endl;
 	return;
 }

@@ -2,6 +2,11 @@
 #include "Brick.hpp"
 #include "Level.hpp"
 #include "Paddle.hpp"
+#include <SFML/Window.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Graphics.hpp>
+
+class Paddle;
 
 class Game
 {
@@ -10,11 +15,11 @@ class Game
 	Paddle	*paddle;
 	Ball	*ball;
 
-	public:
-	Game(const int lvl);
-	~Game(void);
+	int		_width;
+	int		_height;
 
-	void	draw_ball();
-	void	draw_paddle();
-	void	draw_level();
+	public:
+	Game(const int lvl, const int width, const int height);
+	~Game(void);
+	&Paddle	createPaddle(const float paddle_width, const float paddle_height, float pos_x, float pos_y, const int speed);
 };
