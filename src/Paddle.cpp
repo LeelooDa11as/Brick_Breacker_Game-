@@ -12,4 +12,9 @@ Paddle::~Paddle(void) {
 	return;
 }
 
+const sf::RectangleShape&	Paddle::getPaddleSprite(void) const {
+	return (this->_paddle_sprite);
+}
+
+
 //void	Paddle::updateBallPosX(Ball &ball, int x) { }

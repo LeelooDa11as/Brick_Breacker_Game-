@@ -11,6 +11,6 @@ Ball::~Ball() {
     return;
 }
 
-const sf::CircleShape&	Ball::getBallSprite(void) {
+const sf::CircleShape&	Ball::getBallSprite(void) const {
     return (this->_ball_sprite);
 }

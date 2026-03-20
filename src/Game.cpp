@@ -38,6 +38,10 @@ Ball*	Game::createBall(const float radius, float pos_x, float pos_y, const int s
 	return ball;
 }
 
-sf::CircleShape Game::getBallSprite(void) {
+const sf::CircleShape& 		Game::getBallSprite(void) const {
 	return (this->ball->getBallSprite());
+}
+
+const sf::RectangleShape&	Game::getPaddleSprite(void) const {
+	return (this->paddle->getPaddleSprite());
 }

@@ -17,7 +17,7 @@ class	Ball {
 		Ball(sf::CircleShape ball_sprite, const float &speed);
 		~Ball(void);
 
-		const sf::CircleShape&	getBallSprite(void);
+		const sf::CircleShape&	getBallSprite(void) const;
 
 		//float	getPosX(void) const;
 		//float	getPoxY(void) const;

@@ -24,5 +24,6 @@ class Game
 	Paddle*	createPaddle(const float paddle_width, const float paddle_height, float pos_x, float pos_y, const int speed);
 	Ball*	createBall(const float radius, float pos_x, float pos_y, const int speed);
 
-	sf::CircleShape getBallSprite(void);
+	const sf::CircleShape&		getBallSprite(void) const;
+	const sf::RectangleShape&	getPaddleSprite(void) const;
 };
