@@ -1,5 +1,5 @@
 NAME = brickBreacker
-SRC = main.cpp
+SRC = main.cpp src/Ball.cpp src/Game.cpp src/Paddle.cpp src/Screen.cpp
 F_OBJ = obj/
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))
@@ -26,6 +26,7 @@ dir:
 
 #compile object files
 $(F_OBJ)%.o: %.cpp Makefile
+	@mkdir -p $(dir $@)
 	@echo "Compiling $< "
 	@$(CC) $(ERROR_FLAGS) -I ./inc $(SFML_INC) -c $< -o $@
 
@@ -44,6 +45,6 @@ fclean: clean
 	$(RM) $(NAME)
 	@echo "$(RED)Everything has been cleaned.$(BLACK)"
 
-re: clean fclean
+re: clean fclean all
 
 .PHONY: all clean fclean re
