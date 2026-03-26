@@ -20,16 +20,16 @@ void    Screen::runGame(void) {
                 window.close();
             }
         }
-     
-        //if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)) {
-        //    playerSprite.move({-5.f, 0.f});
-        //}
-        //if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)) {
-        //    playerSprite.move({5.f, 0.f});
-        //}
+        
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)) {
+			game->movePaddle(-5.f, 0.f);
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)) {
+            game->movePaddle(5.f, 0.f);
+        }
         window.clear();
         window.draw(game->getBallSprite());
-         window.draw(game->getPaddleSprite());
+        window.draw(game->getPaddleSprite());
         window.display();
     }
 }

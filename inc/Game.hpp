@@ -26,4 +26,6 @@ class Game
 
 	const sf::CircleShape&		getBallSprite(void) const;
 	const sf::RectangleShape&	getPaddleSprite(void) const;
+
+	void						movePaddle(const float x, const float y);
 };

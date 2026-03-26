@@ -10,6 +10,7 @@ class Paddle
 		//float		_pos_x;
 		//const float	_pos_y;
 		sf::RectangleShape	_paddle_sprite;
+		float				_width;
 		float				_speed;
 	
 	public:
@@ -17,6 +18,7 @@ class Paddle
 		~Paddle(void);
 
 		const sf::RectangleShape&	getPaddleSprite(void) const;
+		void						paddleMove(const float x, const float y, const float window_width);
 
 		//void	updateBallPosX(Ball &ball, int x);
 		//void	setPosX(const float &new_pos_x);

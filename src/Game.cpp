@@ -45,3 +45,7 @@ const sf::CircleShape& 		Game::getBallSprite(void) const {
 const sf::RectangleShape&	Game::getPaddleSprite(void) const {
 	return (this->paddle->getPaddleSprite());
 }
+
+void						Game::movePaddle(const float x, const float y) {
+	paddle->paddleMove(x, y, static_cast<float>(_width));
+}
