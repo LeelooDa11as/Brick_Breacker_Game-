@@ -5,14 +5,14 @@ Game::Game(const int lvl, const unsigned int width, const unsigned int height) :
 		// paddle
 	float	paddle_width = 100;
 	float	paddle_height = 20;
-	float	paddle_speed = 45;
+	float	paddle_speed = 5;
 	float	paddle_pos_x = 0;
 	float	paddle_pos_y = _height/2 - 20;
 		// ball
 	float	ball_radius = 10;
 	float	ball_pos_x = 0;
 	float	ball_pos_y = paddle_pos_y - paddle_height/2 - ball_radius;
-	float	ball_speed = 30;
+	float	ball_speed = 7;
 
 
 	level = new Level(lvl);
@@ -56,6 +56,6 @@ const sf::RectangleShape&	Game::getPaddleSprite(void) const {
 	return (this->paddle->getPaddleSprite());
 }
 
-void						Game::movePaddle(const float x, const float y) {
-	paddle->paddleMove(x, y, static_cast<float>(_width));
+void						Game::movePaddle(const std::string &side) const {
+	paddle->paddleMove(side, static_cast<float>(_width));
 }

@@ -24,10 +24,10 @@ void    Screen::runGame(void) {
         }
         
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)) {
-			game->movePaddle(-5.f, 0.f);
+			game->movePaddle("left");
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)) {
-            game->movePaddle(5.f, 0.f);
+            game->movePaddle("right");
         }
         window.clear();
         window.draw(game->getBallSprite());
