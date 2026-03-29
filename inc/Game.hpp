@@ -28,4 +28,5 @@ class Game
 	const sf::RectangleShape&	getPaddleSprite(void) const;
 
 	void						movePaddle(const std::string &side) const;
+	void						drawGame(sf::RenderWindow &window);
 };

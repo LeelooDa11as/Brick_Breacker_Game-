@@ -30,8 +30,9 @@ void    Screen::runGame(void) {
             game->movePaddle("right");
         }
         window.clear();
+        game->drawGame(window);
         window.draw(game->getBallSprite());
-        window.draw(game->getPaddleSprite());
+        //window.draw(game->getPaddleSprite());
         window.display();
     }
 }

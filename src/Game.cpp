@@ -59,3 +59,8 @@ const sf::RectangleShape&	Game::getPaddleSprite(void) const {
 void						Game::movePaddle(const std::string &side) const {
 	paddle->paddleMove(side, static_cast<float>(_width));
 }
+
+void						Game::drawGame(sf::RenderWindow &window) {
+	paddle->draw(window);
+}
+

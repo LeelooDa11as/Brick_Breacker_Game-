@@ -19,6 +19,7 @@ class Paddle
 
 		const sf::RectangleShape&	getPaddleSprite(void) const;
 		void						paddleMove(const std::string &side, const float window_width);
+		void						draw(sf::RenderWindow &window);
 
 		//void	updateBallPosX(Ball &ball, int x);
 		//void	setPosX(const float &new_pos_x);

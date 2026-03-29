@@ -39,4 +39,8 @@ void Paddle::paddleMove(const std::string &side, float window_width) {
         }
     }
 }
+
+void    Paddle::draw(sf::RenderWindow &window) {
+    window.draw(_paddle_sprite);
+}
 //void	Paddle::updateBallPosX(Ball &ball, int x) { }
