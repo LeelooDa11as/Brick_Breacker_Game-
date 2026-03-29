@@ -16,22 +16,28 @@ const sf::RectangleShape&	Paddle::getPaddleSprite(void) const {
 	return (this->_paddle_sprite);
 }
 
-void						Paddle::paddleMove(const float x, const float y, const float window_width) {
-	sf::Vector2f	current_pos = _paddle_sprite.getPosition();
-	float           move_x = x;
-    
-    if (x < 0) {
-        if (current_pos.x + x < 0) {
-            move_x = 0 - current_pos.x;
+void Paddle::paddleMove(float x, float y, float window_width) {
+    float current_x = _paddle_sprite.getPosition().x;
+    float half_p_width = _width / 2.f;
+    float limit = window_width / 2.f;
+
+    if (x < 0) { // Moving Left
+        // If (current position + move) is past the left limit (-400)
+        if (current_x + x - half_p_width < -limit) {
+            // Snap to the wall: Wall position + half the paddle's width
+            _paddle_sprite.setPosition({-limit + half_p_width, _paddle_sprite.getPosition().y});
+        } else {
+            _paddle_sprite.move({x, y});
+        }
+    } 
+    else if (x > 0) { // Moving Right
+        // If (current position + move) is past the right limit (400)
+        if (current_x + x + half_p_width > limit) {
+            // Snap to the wall: Wall position - half the paddle's width
+            _paddle_sprite.setPosition({limit - half_p_width, _paddle_sprite.getPosition().y});
+        } else {
+            _paddle_sprite.move({x, y});
         }
     }
-	else if (x > 0) {
-		float	right_edge = window_width - _width;
-		if (current_pos.x + x > right_edge) {
-			move_x = right_edge - current_pos.x;
-		}
-	}
-	_paddle_sprite.move({move_x, y});
 }
-
 //void	Paddle::updateBallPosX(Ball &ball, int x) { }

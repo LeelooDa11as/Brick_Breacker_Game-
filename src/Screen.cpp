@@ -13,6 +13,8 @@ Screen::~Screen() {
 void    Screen::runGame(void) {
     sf::RenderWindow window(sf::VideoMode({static_cast<unsigned int>(width), static_cast<unsigned int>(height)}), "Brick Breaker");
     window.setFramerateLimit(60);
+    sf::View    view(sf::Vector2f(0.f, 0.f), sf::Vector2f(width, height));
+    window.setView(view);
 
     while (window.isOpen()) {
         while (const std::optional event = window.pollEvent()) {
