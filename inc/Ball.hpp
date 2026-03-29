@@ -4,31 +4,16 @@
 #include <SFML/Graphics.hpp>
 
 class	Ball {
-	private:
-		/* position of the object */ 
-		
+	private:	
 		//float	_dir_vect[2] = {1, 0};
 
 		/* design of the object */
 		sf::CircleShape	_ball_sprite;
-		float	_speed;
+		float			_speed;
 
 	public:
 		Ball(sf::CircleShape ball_sprite, const float &speed);
 		~Ball(void);
 
-		const sf::CircleShape&	getBallSprite(void) const;
-		void					draw(sf::RenderWindow &window);
-
-		//float	getPosX(void) const;
-		//float	getPoxY(void) const;
-
-		//void	setPosX(const float &x);
-		//void	setPosY(const float &y);
-
-		// vertical bounce
-		// horizontal bounce
-		// brick bounce
-		// paddle bounce
-
+		void	draw(sf::RenderWindow &window);
 };

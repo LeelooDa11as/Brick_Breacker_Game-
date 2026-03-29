@@ -12,10 +12,6 @@ Paddle::~Paddle(void) {
 	return;
 }
 
-const sf::RectangleShape&	Paddle::getPaddleSprite(void) const {
-	return (this->_paddle_sprite);
-}
-
 void Paddle::paddleMove(const std::string &side, float window_width) {
     float current_x = _paddle_sprite.getPosition().x;
     float half_p_width = _width / 2.f;
@@ -43,4 +39,5 @@ void Paddle::paddleMove(const std::string &side, float window_width) {
 void    Paddle::draw(sf::RenderWindow &window) {
     window.draw(_paddle_sprite);
 }
+
 //void	Paddle::updateBallPosX(Ball &ball, int x) { }
