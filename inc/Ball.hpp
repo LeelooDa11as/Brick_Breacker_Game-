@@ -18,6 +18,7 @@ class	Ball {
 		~Ball(void);
 
 		const sf::CircleShape&	getBallSprite(void) const;
+		void					draw(sf::RenderWindow &window);
 
 		//float	getPosX(void) const;
 		//float	getPoxY(void) const;

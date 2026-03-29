@@ -31,8 +31,6 @@ void    Screen::runGame(void) {
         }
         window.clear();
         game->drawGame(window);
-        window.draw(game->getBallSprite());
-        //window.draw(game->getPaddleSprite());
         window.display();
     }
 }

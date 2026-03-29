@@ -11,6 +11,10 @@ Ball::~Ball() {
     return;
 }
 
+void					Ball::draw(sf::RenderWindow &window) {
+    window.draw(_ball_sprite);
+}
+
 const sf::CircleShape&	Ball::getBallSprite(void) const {
     return (this->_ball_sprite);
 }
