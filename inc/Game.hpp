@@ -1,5 +1,4 @@
 #include "Ball.hpp"
-#include "Brick.hpp"
 #include "Level.hpp"
 #include "Paddle.hpp"
 #include <SFML/Window.hpp>
@@ -24,8 +23,8 @@ class Game
 	Paddle*	createPaddle(const float paddle_width, const float paddle_height, float pos_x, float pos_y, const int speed);
 	Ball*	createBall(const float radius, float pos_x, float pos_y, const int speed);
 
-	const sf::CircleShape&		getBallSprite(void) const;
-	const sf::RectangleShape&	getPaddleSprite(void) const;
+	//const sf::CircleShape&		getBallSprite(void) const;
+	//const sf::RectangleShape&	getPaddleSprite(void) const;
 
 	void						movePaddle(const std::string &side) const;
 	void						drawGame(sf::RenderWindow &window);

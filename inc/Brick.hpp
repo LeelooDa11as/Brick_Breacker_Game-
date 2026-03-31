@@ -1,19 +1,17 @@
 #include <iostream>
+#include <SFML/Window.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Graphics.hpp>
 
 class Brick
 {
 	private:
-		/* position of the object */
-		float		_pos_x;
-		float		_pos_y;
-
-		/* design of the object */
-		int			_level;
-		float		_height;
-		float		_width;
+		sf::RectangleShape	_brick_sprite;
+		int					_level;
 		
 	public:
-		Brick(const int level, const float &pos_x, const float &pos_y);
+		Brick(const int level, const float &pos_x, const float &pos_y, const float &width, const float &height);
 		~Brick(void);
-		//void brickHit(void);
+		void	draw(sf::RenderWindow &window);
+		//bool isDestroyed(void) const;
 };
