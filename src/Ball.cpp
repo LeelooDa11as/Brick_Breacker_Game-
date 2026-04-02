@@ -2,7 +2,7 @@
 
 Ball::Ball(sf::CircleShape ball_sprite, const float &speed) : _ball_sprite(ball_sprite), _speed(speed) {
 	std::cout << "Ball class constructor has been called" << std::endl;
-	std::cout << "Ball has speed: " << _speed << std::endl;
+	_dir_vect = {0, -(_speed)};
     return;
 }
 
@@ -11,6 +11,20 @@ Ball::~Ball() {
     return;
 }
 
-void					Ball::draw(sf::RenderWindow &window) {
+void	Ball::draw(sf::RenderWindow &window) {
     window.draw(_ball_sprite);
 }
+
+void	Ball::update(void) {
+    _ball_sprite.move(_dir_vect);
+    //sf::Vector2f	pos = _ball_sprite.getPosition();
+}
+
+/*void	Ball::bounceX(void) {
+
+}
+
+void	Ball::bounceY(void) {
+
+}
+*/

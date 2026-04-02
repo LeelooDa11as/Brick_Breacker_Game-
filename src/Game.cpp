@@ -62,6 +62,7 @@ void						Game::movePaddle(const std::string &side) const {
 
 void						Game::drawGame(sf::RenderWindow &window) {
 	paddle->draw(window);
+	ball->update();
 	ball->draw(window);
 	level->draw(window);
 }

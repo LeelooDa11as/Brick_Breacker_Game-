@@ -5,7 +5,7 @@
 
 class	Ball {
 	private:	
-		//float	_dir_vect[2] = {1, 0};
+		sf::Vector2f	_dir_vect;
 
 		/* design of the object */
 		sf::CircleShape	_ball_sprite;
@@ -16,4 +16,7 @@ class	Ball {
 		~Ball(void);
 
 		void	draw(sf::RenderWindow &window);
+		void	update(void);
+		//void	bounceX(void);
+		//void	bounceY(void);
 };
