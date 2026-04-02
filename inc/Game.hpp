@@ -14,8 +14,8 @@ class Game
 	Paddle	*paddle;
 	Ball	*ball;
 
-	int		_width;
-	int		_height;
+	float	_width;
+	float	_height;
 
 	public:
 	Game(const int lvl, const unsigned int width, const unsigned int height);

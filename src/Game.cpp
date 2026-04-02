@@ -12,10 +12,10 @@ Game::Game(const int lvl, const unsigned int width, const unsigned int height) :
 	float	ball_radius = 10;
 	float	ball_pos_x = 0;
 	float	ball_pos_y = paddle_pos_y - paddle_height/2 - ball_radius;
-	float	ball_speed = 7;
+	float	ball_speed = 5;
 
 
-	level = new Level(lvl, static_cast<float>(_width), static_cast<float>(_height));
+	level = new Level(lvl, _width, _height);
 	paddle = createPaddle(paddle_width, paddle_height,  paddle_pos_x, paddle_pos_y, paddle_speed);
 	ball = createBall(ball_radius, ball_pos_x, ball_pos_y, ball_speed);
 	return;
@@ -44,7 +44,7 @@ Ball*	Game::createBall(const float radius, float pos_x, float pos_y, const int s
 
 	ballSprite.setOrigin({radius, radius});
 	ballSprite.setPosition({pos_x, pos_y});
-	ball = new Ball(ballSprite, speed);
+	ball = new Ball(ballSprite, speed, _width, _height);
 	return ball;
 }
 
@@ -57,7 +57,7 @@ const sf::RectangleShape&	Game::getPaddleSprite(void) const {
 }*/
 
 void						Game::movePaddle(const std::string &side) const {
-	paddle->paddleMove(side, static_cast<float>(_width));
+	paddle->paddleMove(side, _width);
 }
 
 void						Game::drawGame(sf::RenderWindow &window) {

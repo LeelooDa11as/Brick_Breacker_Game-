@@ -1,8 +1,9 @@
 #include <Ball.hpp>
 
-Ball::Ball(sf::CircleShape ball_sprite, const float &speed) : _ball_sprite(ball_sprite), _speed(speed) {
+Ball::Ball(sf::CircleShape ball_sprite, const float &speed, const float &window_width, const float &window_height) : _ball_sprite(ball_sprite), _speed(speed), _window_width(window_width), _window_height(window_height) {
 	std::cout << "Ball class constructor has been called" << std::endl;
-	_dir_vect = {0, -(_speed)};
+	_dir_vect = {0, -(_speed)}; // initial movement starigh and up, the angle can be randomised in future
+    _radius = _ball_sprite.getRadius();
     return;
 }
 
@@ -17,14 +18,22 @@ void	Ball::draw(sf::RenderWindow &window) {
 
 void	Ball::update(void) {
     _ball_sprite.move(_dir_vect);
-    //sf::Vector2f	pos = _ball_sprite.getPosition();
+    sf::Vector2f	pos = _ball_sprite.getPosition();
+
+    float   half_window_w = _window_width / 2; 
+    float   half_window_h = _window_height / 2;
+
+    // first attemp on bouncing (No future prediction move)
+    if (pos.x + _radius == half_window_w || pos.x - _radius == -(half_window_w))
+        bounceX();
+    if (pos.y + _radius == half_window_h || pos.y - _radius == -(half_window_h))
+        bounceY();
 }
 
-/*void	Ball::bounceX(void) {
-
+void	Ball::bounceX(void) {
+    _dir_vect.x *= -1;
 }
 
 void	Ball::bounceY(void) {
-
+    _dir_vect.y *= -1;
 }
-*/
